@@ -1,4 +1,7 @@
 def create_matrix(side):
+    if side <= 0:
+        raise ValueError("side size must be greater than zero")
+
     matrix = [[None] * side for _ in range(side)]
     row = col = (side - 1) // 2
     nums_iter = iter(range(1, side ** 2 + 1))
