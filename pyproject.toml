@@ -10,5 +10,5 @@ version = "0.0.1"
 clockwise_square_numbers = "clockwise_square_nums_cli:main"
 
 [tool.setuptools]
-py_modules = ["clockwise_square_nums_cli"]
+py-modules = ["clockwise_square_nums_cli"]
 packages = ["clockwise_square_nums"]
