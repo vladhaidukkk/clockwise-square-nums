@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clockwise-square-nums"
+version = "0.0.1"
+
+[project.scripts]
+clockwise_square_numbers = "clockwise_square_nums_cli:main"
+
+[tool.setuptools]
+py-modules = ["clockwise_square_nums_cli"]
+packages = ["clockwise_square_nums"]
