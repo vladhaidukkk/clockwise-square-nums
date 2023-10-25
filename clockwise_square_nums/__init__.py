@@ -1,1 +1,1 @@
-from .clockwise_square_nums import matrix
+from .clockwise_square_nums import create_matrix
