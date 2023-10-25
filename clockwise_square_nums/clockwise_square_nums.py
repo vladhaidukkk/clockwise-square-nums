@@ -7,28 +7,22 @@ def create_matrix(side):
     nums_iter = iter(range(1, side ** 2 + 1))
     matrix[row][col] = next(nums_iter)
 
+    def move(x, y, *, times=1):
+        nonlocal row, col
+        for _ in range(times):
+            row += x
+            col += y
+            matrix[row][col] = next(nums_iter)
+
     for side_limit in range(2, side + 1):
+        times = side_limit - 1
         if side_limit % 2 == 0:
-            col += 1
-            matrix[row][col] = next(nums_iter)
-
-            for _ in range(side_limit - 1):
-                row += 1
-                matrix[row][col] = next(nums_iter)
-
-            for _ in range(side_limit - 1):
-                col -= 1
-                matrix[row][col] = next(nums_iter)
+            move(0, 1)
+            move(1, 0, times=times)
+            move(0, -1, times=times)
         else:
-            col -= 1
-            matrix[row][col] = next(nums_iter)
-
-            for _ in range(side_limit - 1):
-                row -= 1
-                matrix[row][col] = next(nums_iter)
-
-            for _ in range(side_limit - 1):
-                col += 1
-                matrix[row][col] = next(nums_iter)
+            move(0, -1)
+            move(-1, 0, times=times)
+            move(0, 1, times=times)
 
     return matrix
