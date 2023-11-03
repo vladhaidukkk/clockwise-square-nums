@@ -3,18 +3,22 @@ from clockwise_square_nums import create_matrix
 
 
 def create_parser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        prog="clockwise_square_nums",
+        description="Display a square matrix filled with numbers in a "
+                    "clockwise direction",
+    )
     parser.add_argument(
         "side",
         type=int,
-        help="size of the side in the printed square"
+        help="size of the side in the printed square",
     )
     parser.add_argument(
         "-w",
         "--width",
         type=int,
         default=4,
-        help="width of each number in the printed square (default: 4)"
+        help="width of each number in the printed square (default: 4)",
     )
     return parser
 
